@@ -24,7 +24,7 @@ USER	hubot
 WORKDIR /hubot
 
 # Install hubot
-RUN yo hubot --owner="James Smith <james@cultureamp.com>" --name=“eve” --adapter=slack --defaults
+RUN yo hubot --owner="James Smith <james@cultureamp.com>" --name="eve" --adapter=slack --defaults
 
 # Some adapters / scripts
 RUN npm install hubot-slack --save && npm install
@@ -32,7 +32,6 @@ RUN npm install hubot-standup-alarm --save && npm install
 RUN npm install hubot-auth --save && npm install
 RUN npm install hubot-alias --save && npm install
 RUN npm install hubot-zendesk --save && npm install
-
 
 # Activate some built-in scripts
 RUN npm install cheerio --save && npm install
