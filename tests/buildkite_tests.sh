@@ -8,10 +8,9 @@ docker login -e $DOCKER_EMAIL -u $DOCKER_USER -p $DOCKER_PASS
 docker build -t smithjw/eve-bot:$BUILDKITE_COMMIT .
 
 # Run container with specs
-docker run -e HUBOT_SLACK_TOKEN=xoxb-8345717250-bIGoEGLsytrKRrDnMY0aiYj2 -d smithjw/eve-bot:$BUILDKITE_COMMIT
 
 # Tag image with current branch name and push when specs are green
-docker tag -f smithjw/eve-bot:$BUILDKITE_COMMIT smithjw/eve-bot:$BUILDKITE_BRANCH
-docker push smithjw/eve-bot:$BUILDKITE_BRANCH
+docker tag -f smithjw/eve-bot:$BUILDKITE_COMMIT smithjw/eve-bot:latest
+docker push smithjw/eve-bot:latest
 
 # Testing
